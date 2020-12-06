@@ -12,7 +12,7 @@ docker run --name joke_container -p 5000:5000 joke_image
 ## LOGS
 Avoided logging to file . Just kept it simple currently printing on Screen  
 
-##TEST . Enjoy Random jokes on.  
+##TEST . 
 
 #Unitest:
 
@@ -21,6 +21,7 @@ export JOKE_URI='http://api.icndb.com/jokes/random?firstName={first_name}&lastNa
 cd tests/ &&  python -m unittest  
 
 
-##WebService Running on:
+##Enjoy Random jokes on. 
+
 
 http://0.0.0.0:5000/
