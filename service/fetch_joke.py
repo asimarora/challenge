@@ -2,14 +2,14 @@ import requests
 from flask import Flask
 from flask import jsonify
 import json
+import os
 
 app = Flask(__name__)
 
 def get_random_joke(first_name, last_name):
     try:
-      joke_uri = 'http://api.icndb.com/jokes/random?firstName={first_name}&lastName={last_name}&limitTo=[nerdy];'
+      joke_uri = os.environ['JOKE_URI']
       target_uri = joke_uri.format(first_name=first_name, last_name=last_name)
-      print ("Joke URI is: {0}".format(target_uri))
       response = requests.request("GET", target_uri)
       if response.status_code != 200:
         return False
@@ -22,7 +22,7 @@ def get_random_joke(first_name, last_name):
 
 def get_random_name():
     try:
-      name_uri = "https://api.namefake.com/"
+      name_uri = os.environ['NAME_URI']
       response = requests.request("GET", name_uri, verify=False)
       if response.status_code != 200:
         return False
@@ -64,4 +64,4 @@ def test_jokes():
 
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5000, debug=True)
+    app.run(host="0.0.0.0", port=os.environ['JOKE_SERVICE_PORT'], debug=True)
