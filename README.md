@@ -17,7 +17,9 @@ Avoided logging to file . Just kept it simple currently printing on Screen
 #Unitest:
 
 export NAME_URI='https://api.namefake.com/'
+
 export JOKE_URI='http://api.icndb.com/jokes/random?firstName={first_name}&lastName={last_name}&limitTo=[nerdy];'
+
 cd tests/ &&  python -m unittest  
 
 
