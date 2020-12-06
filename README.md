@@ -26,4 +26,4 @@ cd tests/ &&  python -m unittest
 ##Enjoy Random jokes on. 
 
 
-http://0.0.0.0:5000/
+http://{localhost}:5000/
